@@ -9,6 +9,10 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 FPS = 60
 level = Level(level_map, WIN)
 
+def draw():
+    WIN.fill('black')
+    level.draw_level()
+    pygame.display.update()
 
 def main():
     run = True
@@ -20,6 +24,8 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+
+        draw()
 
     pygame.quit()
 
