@@ -28,11 +28,11 @@ class Level:
     def scroll_map(self):
         direction = self.player.direction.x
 
-        if self.player.rect.x < 200 and direction < 0:
+        if self.player.rect.x < WIDTH / 4 and direction < 0:
             self.world_shift = 8
             self.player.vel = 0
 
-        elif self.player.rect.x > WIDTH - 200 and direction > 0:
+        elif self.player.rect.x > WIDTH - WIDTH / 4 and direction > 0:
             self.world_shift = -8
             self.player.vel = 0
         
