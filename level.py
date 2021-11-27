@@ -18,6 +18,8 @@ class Level:
                     cell = Tile((x, y), tile_size)
                     self.tiles.add(cell)
 
-    def draw_level(self):
+    def scroll_map(self):
         self.tiles.update(self.world_shift)
+
+    def draw_level(self):
         self.tiles.draw(self.display_surface)
