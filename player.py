@@ -9,18 +9,18 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.Surface((size, size))
         self.image.fill('purple')
         self.rect = self.image.get_rect(topleft = pos)
+        self.direction = pygame.math.Vector2(0,0)
         self.vel = velocity
 
-    def draw(self):
-        group = pygame.sprite.GroupSingle()
-        group.add(self)
-        group.draw(self.display_surface)
+    def controller(self):
+        keys = pygame.key.get_pressed()
 
-    def move_left(self):
-        self.rect.x -= self.vel
+        if keys[pygame.K_a]:
+            self.rect.x -= self.vel
+            self.direction.x = -1
 
-    def move_right(self):
-        self.rect.x += self.vel
+        elif keys[pygame.K_d]:
+            self.rect.x += self.vel
+            self.direction.x = 1
 
-    def jump(self):
-        self.rect.y -= 10
+        else: self.direction.x = 0

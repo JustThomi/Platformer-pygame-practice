@@ -1,5 +1,6 @@
 import pygame
-from settings import tile_size
+from player import Player
+from settings import WIDTH, tile_size
 from tiles import Tile
 
 class Level:
@@ -17,9 +18,31 @@ class Level:
                     y = row_index * tile_size
                     cell = Tile((x, y), tile_size)
                     self.tiles.add(cell)
+                if tile == 'P':
+                    x = tile_index * tile_size
+                    y = row_index * tile_size
+                    self.player = Player((x, y),tile_size, 8, self.display_surface)
+                    self.tiles.add(self.player)
+
 
     def scroll_map(self):
+        direction = self.player.direction.x
+
+        if self.player.rect.x < 200 and direction < 0:
+            self.world_shift = 8
+            self.player.vel = 0
+
+        elif self.player.rect.x > WIDTH - 200 and direction > 0:
+            self.world_shift = -8
+            self.player.vel = 0
+        
+        else:
+            self.world_shift = 0
+            self.player.vel = 8
+
         self.tiles.update(self.world_shift)
 
     def draw_level(self):
+        self.scroll_map()
+        self.player.controller()
         self.tiles.draw(self.display_surface)
