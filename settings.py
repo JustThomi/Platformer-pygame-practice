@@ -1,14 +1,14 @@
-level_map = ["                    ",
-             "                    ",
-             "             XXX    ",
-             "             XXX    ",
-             "             XXX    ",
-             "             XXX    ",
-             "           XXXXXXX  ",
-             "XXXXXX              ",
-             "XXXXXX  P     XXXXXX",
-             "XXXXXXXXXXXXXXXXXXXX",
-             "XXXXXXXXXXXXXXXXXXXX"]
+level_map = ["                                                       ",
+             "                                                       ",
+             "  XXXXXX                              XXXXXX           ",
+             "                                                       ",
+             "                         XXXXXX                        ",
+             "       XXXXXX                                  XXXXXX  ",
+             "                                       XXXXXX          ",
+             "XXXXXX        XXXXXX                  XXXXXX           ",
+             "XXXXXX  P     XXXXXX       XXXX      XXXXXX            ",
+             "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+             "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"]
 
 tile_size = 64
 WIDTH = 1200
