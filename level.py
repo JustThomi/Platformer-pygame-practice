@@ -44,5 +44,5 @@ class Level:
 
     def draw_level(self):
         self.scroll_map()
-        self.player.controller()
+        self.player.update_player()
         self.tiles.draw(self.display_surface)
